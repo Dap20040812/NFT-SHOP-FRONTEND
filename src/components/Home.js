@@ -1,9 +1,20 @@
-import React from 'react'
+import React, {Component} from 'react'
+import Categories from './Categories'
+import Footer from './Footer'
+import Products from './Products'
+import Slider from './Slider'
 
-function Home() {
+class Home extends Component{
+  render() {
   return (
-    <div>Home</div>
+    <div>
+        <Slider />
+        <Categories />
+        <Products />
+        <Footer />
+    </div>
   )
+  }
 }
 
 export default Home
