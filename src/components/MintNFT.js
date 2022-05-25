@@ -25,7 +25,6 @@ class MintNFT extends Component{
       };
       this.mint = this.mint.bind(this);
 
-      this.renderAuctionElement = this.renderAuctionElement.bind(this);
     }
     async init() {
       if (window.ethereum) {
@@ -69,39 +68,7 @@ class MintNFT extends Component{
       alert(`Transaction sent! Hash: ${hash}`);
      
     } 
-    renderAuctionElement(auction) {
-      let state = "";
-      if (auction.auctionState === 0) {
-        state = "Open";
-      }
-      if (auction.auctionState === 1) {
-        state = "Cancelled";
-      }
-      if (auction.auctionState === 2) {
-        state = "Ended";
-      }
-      if (auction.auctionState === 3) {
-        state = "Direct Buy";
-      }
-      return (
-        <div style={{ background: "yellow" }} class="col">
-          <p>ID: {auction.tokenId}</p> {/* ID of the token */}
-          <p>Highest Bid: {auction.highestBid || 0}</p>
-          {/* Highest bid */}
-          <p>Direct Buy: {auction.directBuyPrice}</p> {/* Direct buy price */}
-          <p>Starting Price: {auction.startPrice}</p> {/* Starting price */}
-          <p>Owner: {auction.owner}</p> {/* Owner of the token */}
-          <p>
-            End Time: {Math.round((auction.endTime * 1000 - Date.now()) / 1000 / 60)}{" "}
-            {/* Time left in minutes */}
-            minutes
-          </p>
-          <p>Auction State: {state}</p>
-          <button class="btn-primary" onClick={() => this.setActiveAuction(auction)}>See More</button>
-        </div>
-      );
-    }
-
+  
     render() {
       return (
         <Container>

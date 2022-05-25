@@ -27,7 +27,7 @@ function Header() {
             <Right>
                 <StyledLink to={`/`}><MenuItem> HOME </MenuItem></StyledLink>
                 <StyledLink to={`/mint`}><MenuItem> MINT </MenuItem></StyledLink>
-                <MenuItem> SIGN IN </MenuItem>
+                <StyledLink to={`/nftpubli`}><MenuItem> PUBLI </MenuItem></StyledLink>
                 <MenuItem> 
                     <Badge badgeContent={4} color='primary'>
                         <ShoppingCartOutlined />

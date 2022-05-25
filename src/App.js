@@ -10,6 +10,7 @@ import NFTPubli from "./components/NFTPubli";
 import Header from "./components/Header";
 import MintNFT from "./components/MintNFT";
 import Announcement from "./components/Announcement";
+import View from "./components/View";
 
 
 const NFT_ADDRESS = "0x471D0990a91257635610CB076EB95C2194868E60"; // NFT contract address
@@ -41,12 +42,12 @@ class App extends Component {
   }
   render = () => (
       <BrowserRouter>
-        <Announcement/>
         <Header/>
         <Switch>
           <Route path='/' component={Home} exact/>
-          <Route path="/nftpubli" component={<NFTPubli/>}/>
+          <Route path="/nftpubli" component={NFTPubli}/>
           <Route path="/mint" component={MintNFT}/>
+          <Route path="/view" component={View}/>
         </Switch>
       </BrowserRouter>
   );
